@@ -26,4 +26,8 @@ nn.Sequential	Low	            High
     Somehow explains autograd. If a PyTorch tensor is created with autograd, then the PyTorch engine cares about
     creating the under-the-hood computational graphs and calculating the gradients and stuff. (I am now seeing that
     this may be explaind in step_5 of the official guide, so I will continue doing the original guide prior to continuing
-    this summary and critique)
+    this summary and critique).
+
+    This is similar to what I've seen in this tutorial, where the functions (Modules) are applied "en la mitad de la nada"
+    and "todos tirados por ahi". Decir que PyTorch se da cuenta que cuentas bien fue las que hizo para despues con el .backward()
+    calcular los gradientes correspondientes y despues corregirlos a manopla.
