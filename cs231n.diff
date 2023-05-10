@@ -31,3 +31,7 @@ nn.Sequential	Low	            High
     This is similar to what I've seen in this tutorial, where the functions (Modules) are applied "en la mitad de la nada"
     and "todos tirados por ahi". Decir que PyTorch se da cuenta que cuentas bien fue las que hizo para despues con el .backward()
     calcular los gradientes correspondientes y despues corregirlos a manopla.
+
+* Part III, PyTorch Module API
+    Weights can be initialized from a custom (or standardly used) distributions
+    torch.nn.functional provides stateless functions, this way some layers need not to be initialized
