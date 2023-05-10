@@ -1,0 +1,29 @@
+Here I write some of the key differences between this approach (the PyTorch one), and the
+approach explored in CS231n given to the PyTorch framework to process data, build a NN, train it, and then
+saving it and using it.
+
+In the CS231n course, they divide the explaination into these parts:
+- Part I, Preparation: we will use CIFAR-10 dataset.
+- Part II, Barebones PyTorch: Abstraction level 1, we will work directly with the lowest-level PyTorch Tensors.
+- Part III, PyTorch Module API: Abstraction level 2, we will use nn.Module to define arbitrary neural network architecture.
+- Part IV, PyTorch Sequential API: Abstraction level 3, we will use nn.Sequential to define a linear feed-forward network very conveniently.
+- Part V, CIFAR-10 open-ended challenge: please implement your own network to get as high accuracy as possible on CIFAR-10.
+    You can experiment with any layer, optimizer, hyperparameters or other advanced features.
+
+Obviously the part V is not our interest now. Here is a table also in the course:
+API	            Flexibility	    Convenience
+Barebone        High	        Low
+nn.Module	    High	        Medium
+nn.Sequential	Low	            High
+
+* Part I, data loading
+    At the beggining of this part, the libraries are called appropiately, but later the data is obtained
+    in a way that is not explained whatsoever. Also, some functions are used (transformations) that is not 
+    clear how they are used.
+    Isn't the validation set polluted with training data ??
+
+* Part II, PyTorch Barebones
+    Somehow explains autograd. If a PyTorch tensor is created with autograd, then the PyTorch engine cares about
+    creating the under-the-hood computational graphs and calculating the gradients and stuff. (I am now seeing that
+    this may be explaind in step_5 of the official guide, so I will continue doing the original guide prior to continuing
+    this summary and critique)
