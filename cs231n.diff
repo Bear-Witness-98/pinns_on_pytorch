@@ -34,4 +34,8 @@ nn.Sequential	Low	            High
 
 * Part III, PyTorch Module API
     Weights can be initialized from a custom (or standardly used) distributions
+    
     torch.nn.functional provides stateless functions, this way some layers need not to be initialized
+
+* Part IV, PyTorch Sequential API
+    Nothing crazy really, just groups a sequence of layers into a single "Mega-layer"
