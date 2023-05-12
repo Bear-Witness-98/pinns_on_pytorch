@@ -4,11 +4,13 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader
 
+from loss_function import pinn_loss
+
 BATCH_SIZE = 10
 
 
 def train_loop(
-    input_data: torch.Tensor, model: nn.Module, loss_fn: nn, optimizer: torch.optim
+    input_data: torch.Tensor, model: nn.Module, optimizer: torch.optim
 ) -> None:
     # I must do the "dataloader" myself, as all the data is to be stored in RAM
     # i.e. in a torch.Tensor variable.
@@ -16,25 +18,22 @@ def train_loop(
     permutation = np.random.permutation(num_datapoints)
     input_data_permuted = input_data[permutation]
     batches = torch.split(input_data_permuted, BATCH_SIZE)
+    size = len(batches)
     for batch_num, X in enumerate(batches):
         # compute prediction and loss
         pred = model(X)
-        plt.figure()
-        plt.scatter(X.detach().numpy(), pred.detach().numpy())
-        plt.show()
-
-        """
+        target = X / (-2) + 1
+        loss = pinn_loss(pred, target)
 
         # backpropagation
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
-        if batch % 100 == 0:
-            loss, current = loss.item(), (batch + 1) * len(X)
+        if batch_num % 2 == 0:
+            loss, current = loss.item(), (batch_num + 1) * len(X)
             print(f"Loss: {loss:>7f} [{current:>5d}/{size:>5d}]")
 
-        """
     return
 
 
