@@ -108,7 +108,7 @@ def main():
     # I understand now that the computational graph thing is in reality
     # a pretty complex algorithmic structure, and also needs to play
     # gracefully with the rest of the library. In the needed moment, more
-    # will be lernt.
+    # will be learnt.
 
     return
 
