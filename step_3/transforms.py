@@ -22,7 +22,7 @@ def obtain_dataset():
     # [0,1] -> hay que ver si reescala con el max o el min, o tomando en cuenta el encodeo de la imagen original
     # (no importante para este tutorial)
     # Lambda == applies any user-defined lambda function. Here it transforms an integer into a one hot encoded tensor
-    # i.e. label = 3 (from the values [0,1,2,3,4,5]) -> f(label) = [0,0,0,1,0,0]
+    # i.e. label = 3 (from the possible values [0,1,2,3,4,5]) -> f(label) = [0,0,0,1,0,0]
 
 
 def main():

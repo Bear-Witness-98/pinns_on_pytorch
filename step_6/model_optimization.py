@@ -4,7 +4,6 @@ from torch.utils.data import DataLoader
 from torchvision import datasets
 from torchvision.transforms import ToTensor
 
-
 # the pipeline is:
 # the data
 # construct (obtain) the Net
@@ -15,9 +14,11 @@ from torchvision.transforms import ToTensor
 
 class NeuralNetwork(nn.Module):
     def __init__(self):
+        # Why the god damn hell is this called this way??
+        # this isn't even in the torch tutorial!
         super(
             NeuralNetwork, self
-        ).__init__()  # Why the god damn hell is this called this way??
+        ).__init__()
         self.flatten = nn.Flatten()
         self.linear_relu_stack = nn.Sequential(
             nn.Linear(28 * 28, 512),
