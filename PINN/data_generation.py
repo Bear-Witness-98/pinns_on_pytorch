@@ -3,14 +3,13 @@ import torch
 
 # generate the data in numpy arrays
 T0 = 0
-X0 = 1
+X0 = 0
 X_dot0 = 1
 
 
 def get_initial_condition() -> list[list[float, float], list[float, float]]:
     return {
         "time-positon": (T0, X0),
-        "time-speed": (T0, X_dot0),
     }
 
 

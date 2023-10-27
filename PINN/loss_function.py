@@ -3,7 +3,7 @@ import torch
 from torch import nn
 
 
-def pinn_loss(output: torch.Tensor, target: torch.Tensor):
+def pinn_loss(output: torch.Tensor):
     # start creating a function to adjust to a simple straight line
     # (known functions), and then try to adjust to the complex diff
     # equation loss functions.
